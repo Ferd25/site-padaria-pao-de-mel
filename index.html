@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panificadora Pão de Mel — Seu dia com doce sabor</title>
+  <meta name="description"
+    content="Panificadora Pão de Mel — Pães, bolos e doces artesanais feitos com ingredientes selecionados. Encomende online e receba em casa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display+SC:wght@400;700;900&family=Great+Vibes&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="images/logo.png" alt="Panificadora Pão de Mel" class="brand-logo" />
+        <span class="brand-name"><span class="brand-serif">Panificadora</span> <span class="brand-script">Pão de
+            Mel</span></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#products">Produtos</a>
+        <a href="#about">Sobre Nós</a>
+        <a href="#testimonials">Avaliações</a>
+        <a href="#order">Encomendar</a>
+      </div>
+
+      <button class="nav-cart" id="openCart" aria-label="Abrir carrinho">
+        🛒 <span>Carrinho</span>
+        <div class="cart-count" id="cartCount">0</div>
+      </button>
+
+      <div class="mobile-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="images/hero_bakery.png" alt="Padaria artesanal" />
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Aberto para Encomendas
+        </div>
+        <h1><span class="brand-serif">Panificadora</span> <span class="highlight brand-script">Pão de Mel</span></h1>
+        <p>Descubra pães, bolos e doces preparados diariamente com ingredientes selecionados e receitas tradicionais.
+          Cada mordida é uma experiência única.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">
+            <span>Ver Produtos</span>
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            Conheça Nossa História
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-float">
+        <div class="float-card">
+          <div class="icon">⏰</div>
+          <div class="info">
+            <h4>Feito Hoje</h4>
+            <p>Produtos frescos diariamente</p>
+          </div>
+        </div>
+        <div class="float-card">
+          <div class="icon">🚚</div>
+          <div class="info">
+            <h4>Entrega Rápida</h4>
+            <p>Receba na sua porta</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCTS ==================== -->
+  <section class="categories" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Nosso Cardápio</div>
+        <h2>Produtos Artesanais</h2>
+        <p>Feitos com amor e os melhores ingredientes todos os dias</p>
+      </div>
+
+      <div class="category-tabs reveal" id="categoryTabs">
+        <button class="category-tab active" data-category="all">Todos</button>
+        <button class="category-tab" data-category="paes">Pães</button>
+        <button class="category-tab" data-category="doces">Doces</button>
+        <button class="category-tab" data-category="bolos">Bolos</button>
+        <button class="category-tab" data-category="salgados">Salgados</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <h2>Tradição & sabor que vêm da <span class="highlight">alma</span></h2>
+          <p>Desde 2016, a Panificadora Pão de Mel traz o melhor da panificação artesanal para a sua mesa. Utilizamos
+            técnicas tradicionais aliadas a ingredientes orgânicos e locais para criar produtos que encantam pelo sabor
+            e qualidade.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="feature-icon">🌾</div>
+              <h4>Ingredientes Naturais</h4>
+              <p>Selecionamos os melhores ingredientes sem conservantes</p>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon">👨‍🍳</div>
+              <h4>Receitas Caseiras</h4>
+              <p>Receitas feitas com amor e passadas de geração em geração</p>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon">🕐</div>
+              <h4>Fermentação Natural</h4>
+              <p>Longo processo de fermentação para mais sabor</p>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon">💚</div>
+              <h4>Sustentável</h4>
+              <p>Embalagens ecológicas e práticas conscientes</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image reveal">
+          <img src="images/pao_frances.png" alt="Pão francês artesanal" />
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Anos</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">30+</div>
+              <div class="stat-label">Receitas</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">1k+</div>
+              <div class="stat-label">Clientes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Avaliações no Google</div>
+        <h2>O Que Nossos Clientes Dizem</h2>
+        <p>Avaliações reais dos nossos clientes no Google Maps</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Os melhores pães que já comi! O sourdough deles é simplesmente perfeito.
+            Encomendo toda semana."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div class="testimonial-author-info">
+              <h4>Maria Silva</h4>
+              <p>Avaliação no Google</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"A torta de frutas vermelhas é divina! A entrega sempre chega no horário e os
+            produtos bem embalados."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div class="testimonial-author-info">
+              <h4>João Santos</h4>
+              <p>Avaliação no Google</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Encomendei um bolo para o aniversário da minha filha e ficou maravilhoso! Todos
+            elogiaram muito."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div class="testimonial-author-info">
+              <h4>Ana Oliveira</h4>
+              <p>Avaliação no Google</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials-cta reveal">
+        <a href="https://maps.app.goo.gl/6fqTGgmkLvqBS8V29" target="_blank" class="btn btn-secondary" rel="noopener">
+          📍 Ver todas as avaliações no Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta-section" id="order">
+    <div class="container">
+      <div class="cta-card reveal">
+        <h2>Pronto para experimentar?</h2>
+        <p>Faça sua encomenda agora e receba nossos produtos artesanais fresquinhos na sua porta.</p>
+        <div class="cta-actions">
+          <a href="#products" class="btn btn-primary"><span>Fazer Encomenda</span></a>
+          <a href="https://wa.me/553532672238" target="_blank" class="btn btn-secondary">📱 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="navbar-brand">
+            <img src="images/logo.png" alt="Panificadora Pão de Mel" class="brand-logo" />
+            <span class="brand-name"><span class="brand-serif">Panificadora</span> <span class="brand-script">Pão de
+                Mel</span></span>
+          </a>
+          <p>Panificadora Pão de Mel — mais de 10 anos de tradição. Ingredientes selecionados, receitas com amor.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/panificadorapaodemel" target="_blank" rel="noopener"
+              aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/panificadorapaodemel" target="_blank" rel="noopener"
+              aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="https://wa.me/553532672238" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <a href="#products">Produtos</a>
+          <a href="#about">Sobre Nós</a>
+          <a href="#testimonials">Avaliações</a>
+          <a href="#order">Encomendar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Produtos</h4>
+          <a href="#products">Pães Artesanais</a>
+          <a href="#products">Bolos & Tortas</a>
+          <a href="#products">Doces</a>
+          <a href="#products">Especiais</a>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4>Contato</h4>
+          <a href="https://maps.app.goo.gl/6fqTGgmkLvqBS8V29" target="_blank" rel="noopener" class="footer-map-link">
+            <div class="footer-map-thumb">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.5!2d-45.45!3d-22.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE1JzAuMCJTIDQ1wrAyNycwLjAiVw!5e0!3m2!1spt-BR!2sbr!4v1&q=Av.+Professora+Maria+do+Carmo+Prado,+218"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização no mapa"></iframe>
+              <div class="map-overlay">📍 Ver no Google Maps</div>
+            </div>
+            <span>Av. Profa. Maria do Carmo Prado, 218 - Vila Sinara, Paraguaçu - MG, 37120-000</span>
+          </a>
+          <a href="tel:+553532672238">📞 (35) 3267-2238</a>
+          <a href="mailto:panificadorazaffer@gmail.com">📧 panificadorazaffer@gmail.com</a>
+          <a href="#">⏰ Seg-Sáb: 5h-19:30h</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Panificadora Pão de Mel. Todos os direitos reservados.</p>
+        <p>Feito com 🧡 e farinha de qualidade</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CART MODAL ==================== -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>🛒 Seu Carrinho</h3>
+        <button class="modal-close" id="closeCart">✕</button>
+      </div>
+      <div class="modal-body" id="cartBody">
+        <!-- Cart items injected by JS -->
+      </div>
+      <div class="modal-footer" id="cartFooter" style="display: none;">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">R$ 0,00</strong>
+        </div>
+        <button class="btn-checkout" id="checkoutBtn">
+          Finalizar Encomenda 🎉
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST ==================== -->
+  <div class="toast" id="toast">
+    <div class="toast-icon">✅</div>
+    <span class="toast-message" id="toastMessage">Adicionado ao carrinho!</span>
+  </div>
+
+  <!-- ==================== FLOATING CART ==================== -->
+  <button class="floating-cart" id="floatingCart" aria-label="Abrir carrinho">
+    🛒
+    <div class="floating-cart-count" id="floatingCartCount">0</div>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
