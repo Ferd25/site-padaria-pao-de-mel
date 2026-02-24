@@ -6,7 +6,8 @@ const products = [
         id: 1,
         name: 'Pão Francês',
         description: 'Crocante por fora, macio por dentro. O tradicional pãozinho fresquinho de cada dia.',
-        price: 0.75,
+        price: 1.00,
+        unit: 'un',
         category: 'paes',
         image: 'images/pao_frances.png',
         badge: 'Mais Vendido'
@@ -15,7 +16,8 @@ const products = [
         id: 2,
         name: 'Broa de Fubá',
         description: 'Receita tradicional mineira com fubá selecionado e um toque caseiro especial.',
-        price: 8.00,
+        price: 29.00,
+        unit: 'Kg',
         category: 'paes',
         image: 'images/broa_fuba.png',
         badge: ''
@@ -24,7 +26,8 @@ const products = [
         id: 3,
         name: 'Bolo de Chocolate',
         description: 'Bolo retangular de chocolate com cobertura cremosa, cortado em pedaços generosos.',
-        price: 45.00,
+        price: 3.00,
+        unit: 'un',
         category: 'bolos',
         image: 'images/chocolate_cake.png',
         badge: 'Especial'
@@ -33,7 +36,8 @@ const products = [
         id: 4,
         name: 'Rosquinhas de Creme',
         description: 'Rosquinhas douradas e macias com saborosa cobertura de creme.',
-        price: 10.00,
+        price: 0.80,
+        unit: 'un',
         category: 'doces',
         image: 'images/rosquinhas_creme.png',
         badge: 'Novidade'
@@ -42,7 +46,8 @@ const products = [
         id: 5,
         name: 'Pão de Leite',
         description: 'Pãozinho fofinho e levemente adocicado, perfeito para o café da manhã.',
-        price: 1.00,
+        price: 1.50,
+        unit: 'un',
         category: 'paes',
         image: 'images/pao_de_leite.png',
         badge: ''
@@ -51,7 +56,8 @@ const products = [
         id: 6,
         name: 'Broa com Gotas de Chocolate',
         description: 'A clássica broa de fubá com irresistíveis gotas de chocolate derretido.',
-        price: 12.00,
+        price: 2.50,
+        unit: 'un',
         category: 'doces',
         image: 'images/broa_chocolate.png',
         badge: 'Favorito'
@@ -60,7 +66,8 @@ const products = [
         id: 7,
         name: 'Bolo de Cenoura',
         description: 'Bolo de cenoura fofinho com generosa cobertura de ganache de chocolate.',
-        price: 40.00,
+        price: 3.00,
+        unit: 'un',
         category: 'bolos',
         image: 'images/bolo_cenoura.png',
         badge: ''
@@ -69,7 +76,8 @@ const products = [
         id: 8,
         name: 'Salgados Sortidos',
         description: 'Coxinha, empada e pastel assado de frango — os salgados mais pedidos da casa.',
-        price: 5.00,
+        price: 6.00,
+        unit: 'un',
         category: 'salgados',
         image: 'images/salgados_sortidos.png',
         badge: 'Novidade'
@@ -78,7 +86,8 @@ const products = [
         id: 9,
         name: 'Pão de Knor e Mortadela',
         description: 'Pães salgados em pedaços: pão de knor temperado e pão de mortadela recheado.',
-        price: 6.00,
+        price: 1.50,
+        unit: 'un',
         category: 'paes',
         image: 'images/pao_knor_mortadela.png',
         badge: ''
@@ -175,7 +184,7 @@ function renderProducts(category = 'all') {
         <h3>${product.name}</h3>
         <p class="product-description">${product.description}</p>
         <div class="product-footer">
-          <div class="product-price">R$ ${product.price.toFixed(2).replace('.', ',')} <small>/un</small></div>
+          <div class="product-price">R$ ${product.price.toFixed(2).replace('.', ',')} <small>/${product.unit || 'un'}</small></div>
           <button class="btn-add-cart" data-id="${product.id}" aria-label="Adicionar ${product.name} ao carrinho">
             + Adicionar
           </button>
