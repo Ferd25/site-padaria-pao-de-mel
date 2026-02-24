@@ -84,8 +84,8 @@ const products = [
     },
     {
         id: 9,
-        name: 'Pão de Knor e Mortadela',
-        description: 'Pão de Knor e Pão de Mortadela.',
+        name: 'Pão de Knor',
+        description: 'Pão macio e saboroso ideal para o café da tarde.',
         price: 1.50,
         unit: 'un',
         category: 'paes',
@@ -246,11 +246,14 @@ function handleAddToCart(e) {
 
     if (!product) return;
 
+    const isKg = product.unit === 'Kg';
+    const step = isKg ? 0.1 : 1;
+
     const existing = cart.find(item => item.id === productId);
     if (existing) {
-        existing.qty += 1;
+        existing.qty = parseFloat((existing.qty + step).toFixed(2));
     } else {
-        cart.push({ ...product, qty: 1 });
+        cart.push({ ...product, qty: step });
     }
 
     // Button feedback
@@ -276,8 +279,16 @@ function handleFavorite(e) {
     }
 }
 
+function formatQtyDisplay(item) {
+    if (item.unit === 'Kg') {
+        const grams = Math.round(item.qty * 1000);
+        return grams >= 1000 ? `${(grams / 1000).toFixed(1).replace('.', ',')}Kg` : `${grams}g`;
+    }
+    return item.qty;
+}
+
 function updateCartUI() {
-    const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+    const totalItems = cart.reduce((sum, item) => item.unit === 'Kg' ? sum + 1 : sum + item.qty, 0);
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
     // Update count badges (navbar + floating)
@@ -306,23 +317,30 @@ function updateCartUI() {
     `;
         cartFooter.style.display = 'none';
     } else {
-        cartBody.innerHTML = cart.map(item => `
+        cartBody.innerHTML = cart.map(item => {
+            const isKg = item.unit === 'Kg';
+            const priceLabel = isKg ? `R$ ${item.price.toFixed(2).replace('.', ',')}/Kg` : `R$ ${item.price.toFixed(2).replace('.', ',')}`;
+            const subtotal = (item.price * item.qty).toFixed(2).replace('.', ',');
+            const qtyDisplay = formatQtyDisplay(item);
+            return `
       <div class="cart-item">
         <div class="cart-item-img">
           <img src="${item.image}" alt="${item.name}" />
         </div>
         <div class="cart-item-info">
           <h4>${item.name}</h4>
-          <p>R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+          <p>${priceLabel}</p>
+          ${isKg ? `<p class="cart-item-subtotal">Subtotal: R$ ${subtotal}</p>` : ''}
         </div>
         <div class="cart-item-actions">
           <button class="qty-btn" data-id="${item.id}" data-action="decrease">−</button>
-          <span class="cart-item-qty">${item.qty}</span>
+          <span class="cart-item-qty ${isKg ? 'cart-item-weight' : ''}">${qtyDisplay}</span>
           <button class="qty-btn" data-id="${item.id}" data-action="increase">+</button>
           <span class="cart-item-remove" data-id="${item.id}" title="Remover">🗑</span>
         </div>
       </div>
-    `).join('');
+    `;
+        }).join('');
 
         cartFooter.style.display = 'block';
         cartTotalEl.textContent = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
@@ -366,10 +384,13 @@ function handleQtyChange(e) {
     const item = cart.find(i => i.id === id);
     if (!item) return;
 
+    const isKg = item.unit === 'Kg';
+    const step = isKg ? 0.1 : 1;
+
     if (action === 'increase') {
-        item.qty += 1;
+        item.qty = parseFloat((item.qty + step).toFixed(2));
     } else {
-        item.qty -= 1;
+        item.qty = parseFloat((item.qty - step).toFixed(2));
         if (item.qty <= 0) {
             cart = cart.filter(i => i.id !== id);
         }
@@ -430,7 +451,9 @@ checkoutBtn.addEventListener('click', () => {
     // Build WhatsApp message
     let message = '🍞 *Encomenda Panificadora Pão de Mel*\n\n';
     cart.forEach(item => {
-        message += `• ${item.name} x${item.qty} — R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}\n`;
+        const isKg = item.unit === 'Kg';
+        const qtyLabel = isKg ? formatQtyDisplay(item) : `x${item.qty}`;
+        message += `• ${item.name} ${qtyLabel} — R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}\n`;
     });
     message += `\n💰 *Total: R$ ${totalPrice.toFixed(2).replace('.', ',')}*`;
     message += '\n\nGostaria de finalizar esta encomenda!';
