@@ -85,7 +85,7 @@ const products = [
     {
         id: 9,
         name: 'Pão de Knor e Mortadela',
-        description: 'Pães salgados em pedaços: pão de knor temperado e pão de mortadela recheado.',
+        description: 'Pão de Knor e Pão de Mortadela.',
         price: 1.50,
         unit: 'un',
         category: 'paes',
