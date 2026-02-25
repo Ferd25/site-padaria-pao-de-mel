@@ -14,6 +14,46 @@ const products = [
     },
     {
         id: 2,
+        name: 'Pão de Queijo',
+        description: 'Pão de queijo mineiro tradicional, crocante por fora e macio por dentro.',
+        price: 31.90,
+        unit: 'Kg',
+        category: 'paes',
+        image: 'images/pao_de_queijo.png',
+        badge: 'Tradicional'
+    },
+    {
+        id: 3,
+        name: 'Biscoitão',
+        description: 'Biscoitão caseiro tradicional, crocante e irresistível para acompanhar o café.',
+        price: 2.00,
+        unit: 'un',
+        category: 'paes',
+        image: 'images/biscoitao.png',
+        badge: 'Mais Vendido'
+    },
+    {
+        id: 4,
+        name: 'Pão de Leite',
+        description: 'Pãozinho fofinho e levemente adocicado, perfeito para o café da manhã.',
+        price: 1.50,
+        unit: 'un',
+        category: 'paes',
+        image: 'images/pao_de_leite.png',
+        badge: 'Mais Vendido'
+    },
+    {
+        id: 5,
+        name: 'Pão de Knorr',
+        description: 'Pão macio e saboroso ideal para o café da tarde.',
+        price: 1.20,
+        unit: 'un',
+        category: 'paes',
+        image: 'images/pao_knor_mortadela.png',
+        badge: ''
+    },
+    {
+        id: 6,
         name: 'Broa de Fubá',
         description: 'Receita tradicional mineira com fubá selecionado e um toque caseiro especial.',
         price: 29.00,
@@ -23,57 +63,47 @@ const products = [
         badge: ''
     },
     {
-        id: 3,
+        id: 7,
+        name: 'Broa com Gotas de Chocolate',
+        description: 'A clássica broa de fubá com irresistíveis gotas de chocolate derretido.',
+        price: 3.00,
+        unit: 'un',
+        category: 'doces',
+        image: 'images/broa_chocolate.png',
+        badge: 'Especial'
+    },
+    {
+        id: 8,
+        name: 'Rosquinhas de Creme',
+        description: 'Rosquinhas douradas e macias com saborosa cobertura de creme.',
+        price: 1.80,
+        unit: 'un',
+        category: 'doces',
+        image: 'images/rosquinhas_creme.png',
+        badge: 'Favorito'
+    },
+    {
+        id: 9,
         name: 'Bolo de Chocolate',
         description: 'Bolo retangular de chocolate com cobertura cremosa, cortado em pedaços generosos.',
-        price: 3.00,
+        price: 3.50,
         unit: 'un',
         category: 'bolos',
         image: 'images/chocolate_cake.png',
         badge: 'Especial'
     },
     {
-        id: 4,
-        name: 'Rosquinhas de Creme',
-        description: 'Rosquinhas douradas e macias com saborosa cobertura de creme.',
-        price: 0.80,
-        unit: 'un',
-        category: 'doces',
-        image: 'images/rosquinhas_creme.png',
-        badge: 'Novidade'
-    },
-    {
-        id: 5,
-        name: 'Pão de Leite',
-        description: 'Pãozinho fofinho e levemente adocicado, perfeito para o café da manhã.',
-        price: 1.50,
-        unit: 'un',
-        category: 'paes',
-        image: 'images/pao_de_leite.png',
-        badge: ''
-    },
-    {
-        id: 6,
-        name: 'Broa com Gotas de Chocolate',
-        description: 'A clássica broa de fubá com irresistíveis gotas de chocolate derretido.',
-        price: 2.50,
-        unit: 'un',
-        category: 'doces',
-        image: 'images/broa_chocolate.png',
-        badge: 'Favorito'
-    },
-    {
-        id: 7,
+        id: 10,
         name: 'Bolo de Cenoura',
         description: 'Bolo de cenoura fofinho com generosa cobertura de ganache de chocolate.',
-        price: 3.00,
+        price: 3.50,
         unit: 'un',
         category: 'bolos',
         image: 'images/bolo_cenoura.png',
         badge: ''
     },
     {
-        id: 8,
+        id: 11,
         name: 'Salgados Sortidos',
         description: 'Coxinha, empada e pastel assado de frango — os salgados mais pedidos da casa.',
         price: 6.00,
@@ -81,16 +111,6 @@ const products = [
         category: 'salgados',
         image: 'images/salgados_sortidos.png',
         badge: 'Novidade'
-    },
-    {
-        id: 9,
-        name: 'Pão de Knor',
-        description: 'Pão macio e saboroso ideal para o café da tarde.',
-        price: 1.50,
-        unit: 'un',
-        category: 'paes',
-        image: 'images/pao_knor_mortadela.png',
-        badge: ''
     }
 ];
 
